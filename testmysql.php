@@ -67,9 +67,8 @@ fclose($file);
 <?php
 try{
 	if(empty($res)==False){
-		foreach ($res as $key => $value) {
- 			$comma_separated = implode(",", $value);
-			echo "<br>The ID returned the user: <b>".$comma_separated."</b>";
+		while($row = $res->fetch_assoc()){
+			echo "<br>The ID returned the user: <b>".$row['name']."<br />";
 		}
 	}
 }
